@@ -9,12 +9,14 @@ package com.example.visualizer;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,12 +36,21 @@ public class VisualizerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizer);
         mVisualizerView = (VisualizerView) findViewById(R.id.activity_visualizer);
-        defaultSetup();
+        setupSharedPreferences();//defaultSetup();
         setupPermissions();
     }
 
-    private void defaultSetup() {
-        mVisualizerView.setShowBass(true);
+//    private void defaultSetup() {
+//        mVisualizerView.setShowBass(true);
+//        mVisualizerView.setShowMid(true);
+//        mVisualizerView.setShowTreble(true);
+//        mVisualizerView.setMinSizeScale(1);
+//        mVisualizerView.setColor(getString(R.string.pref_color_red_value));
+//    }
+    private void setupSharedPreferences() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        mVisualizerView.setShowBass(sharedPreferences.getBoolean("show_bass", true));
         mVisualizerView.setShowMid(true);
         mVisualizerView.setShowTreble(true);
         mVisualizerView.setMinSizeScale(1);

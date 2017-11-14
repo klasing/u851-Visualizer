@@ -4,8 +4,13 @@
     <string name="action_settings">Settings</string>
 
     <string name="pref_show_bass_label">Show Bass</string>
-
     <string name="pref_show_bass_key" translatable="false">show_bass</string>
+
+    <string name="pref_show_mid_range_label">Show Mid Range</string>
+    <string name="pref_show_mid_range_key" translatable="false">show_mid_range</string>
+
+    <string name="pref_show_treble_label">Show Treble</string>
+    <string name="pref_show_treble_key" translatable="false">show_treble</string>
 
     <string name="pref_show_true">Shown</string>
     <string name="pref_show_false">Hidden</string>
